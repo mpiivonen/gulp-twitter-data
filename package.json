@@ -1,0 +1,50 @@
+{
+  "name": "gulp-twitter-data",
+  "version": "0.1.0",
+  "description": "To access twitter public streams",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp && nodeunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpiivonen/gulp-twitter-data"
+  },
+  "keywords": [
+    "twitter",
+    "api",
+    "data",
+    "stream"
+  ],
+  "files": [
+    "index.js",
+    "LICENCE",
+    "README.md",
+    "./lib"
+  ],
+  "author": "Markus Iivonen <markuspiivonen@gmail.com> (https://github.com/mpiivonen/gulp-twitter-data)",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mpiivonen/gulp-twitter-data/blob/master/LICENSE"
+    }
+  ],
+  "copyright": "Copyright (c) 2014 Markus Iivonen",
+  "help": "This section will be added later",
+  "bugs": {
+    "url": "https://github.com/mpiivonen/gulp-twitter-data/issues"
+  },
+  "dependencies": {
+    "config": "^1.2",
+    "gulp": "~3.6.2",
+    "gulp-jshint": "^1.8.6",
+    "nodeunit": "0.9.0",
+    "coveralls": "^2.11.2",
+    "twitter-data": "mpiivonen/twitter-data",
+    "gulp-gzip": "0.0.8",
+    "gulp-filesize": "0.0.6",
+    "pretty-bytes": "^1.0.2",
+    "gulp-watch": "^3.0.0"
+  },
+  "homepage": "https://github.com/mpiivonen/gulp-twitter-data"
+}
