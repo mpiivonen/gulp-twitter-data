@@ -20,7 +20,8 @@ File to keep eye on.
 **maxSize**
 
 Max file size by using pretty-bytes type of value, as an example '50 B'.
-Available unit are ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
+
+Available units are ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
 
 **location**
 
