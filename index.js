@@ -39,8 +39,10 @@ function compareFileSize(file,maxSize,cb) {
 module.exports = function(file,maxSize)
 {
 
-  compareFileSize(file,maxSize,function(res){
-    return res;
+  fs.watchFile(file, function (cb) {
+    compareFileSize(file,maxSize,function(res){
+      return cb(res);
+    });
   });
 
 };
