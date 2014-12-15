@@ -7,12 +7,12 @@ will be copied over and the original file will be cleared.
 
 Quite handy tool to keep track of different logs your program may generate
 
-
 Syntax
-------
+-------
+Syntax
 ```javascript
 fileTracker(file,maxSize,location);
-
+```
 **file**
 
 File to keep eye on.
@@ -25,12 +25,14 @@ Available unit are ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
 **location**
 
 Location where to files are stored. Each new file will be named as
-file + '.'+number
+file + '.'+running number
+
+There's no max number of files.
 
 Example
---------
-```javascript
+-------
 
+```javascript
 var gulp = require('gulp');
 var fileTracker = require('./index.js');
 
@@ -45,3 +47,4 @@ gulp.task('default', function () {
 gulp.task('watch', function() {
   fileTracker(file,maxSize,location);
 });
+```
