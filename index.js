@@ -1,7 +1,4 @@
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    gzip = require('gulp-gzip'),
-    fs = require('fs'),
+var fs = require('fs'),
     fse = require('fs.extra'),
     prettyBytes = require('pretty-bytes');
 
@@ -60,9 +57,7 @@ module.exports = function(file,maxSize,newLocation)
       else {
         console.log("File size under desired size");
       }
-      //return res;
     });
   });
-
 
 };

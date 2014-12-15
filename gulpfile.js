@@ -11,6 +11,4 @@ gulp.task('default', function () {
 
 gulp.task('watch', function() {
   fileTracker(file,maxSize,location);
-  //asdf
-  //gulp.watch('less/*.less', ['less']);
 });
