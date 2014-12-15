@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     gzip = require('gulp-gzip'),
     fs = require('fs'),
+    fse = require('fs.extra'),
     prettyBytes = require('pretty-bytes');
 
 const PLUGIN_NAME = 'gulp-twitter-data';
@@ -9,7 +10,7 @@ const PLUGIN_NAME = 'gulp-twitter-data';
 // Return a string containing file size and unit e.g 1 kB
 function getFileSize(file,cb) {
   fs.stat(file, function (err, stats) {
-    console.log(prettyBytes(stats.size));
+
     return cb(prettyBytes(stats.size));
   });
 }
@@ -22,6 +23,8 @@ function compareFileSize(file,maxSize,cb) {
 
     var fileUnit = size.split(" ");
     var maxUnit = maxSize.split(" ");
+    console.log(fileUnit);
+    console.log(maxUnit);
 
     if(units.indexOf(fileUnit[1]) < units.indexOf(maxUnit[1])) {
       return cb(0);
@@ -36,13 +39,30 @@ function compareFileSize(file,maxSize,cb) {
 
 }
 
-module.exports = function(file,maxSize)
+module.exports = function(file,maxSize,newLocation)
 {
 
+  var logNumber = 1;
   fs.watchFile(file, function (cb) {
+    console.log("File size changed");
     compareFileSize(file,maxSize,function(res){
-      return cb(res);
+      if(res){
+        console.log("File size exceeded");
+        fse.copy(file, newLocation+file+'.'+logNumber, function (err) {
+          if (err) {
+            throw err;
+          }
+          logNumber++;
+          console.log('Copied foo.txt to bar.txt');
+          fs.truncate(file, 0, function(){console.log('done')})
+        });
+      }
+      else {
+        console.log("File size under desired size");
+      }
+      //return res;
     });
   });
+
 
 };

@@ -1,13 +1,16 @@
 var gulp = require('gulp');
 var fileTracker = require('./index.js');
 
-/*
-gulp.task('default', function()
-{
-  fileTracker();
-});
-*/
+var file = 'testfile.log',
+    maxSize = '50 B',
+    location = './';
 
 gulp.task('default', function () {
-  fileTracker('index.js', '2 kB');
+  fileTracker(file,maxSize,location);
+});
+
+gulp.task('watch', function() {
+  fileTracker(file,maxSize,location);
+  //asdf
+  //gulp.watch('less/*.less', ['less']);
 });

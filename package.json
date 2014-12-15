@@ -44,7 +44,8 @@
     "gulp-gzip": "0.0.8",
     "gulp-filesize": "0.0.6",
     "pretty-bytes": "^1.0.2",
-    "gulp-watch": "^3.0.0"
+    "gulp-watch": "^3.0.0",
+    "fs.extra": "^1.2.1"
   },
   "homepage": "https://github.com/mpiivonen/gulp-twitter-data"
 }
