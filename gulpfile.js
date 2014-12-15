@@ -8,7 +8,3 @@ var file = 'testfile.log',
 gulp.task('default', function () {
   fileTracker(file,maxSize,location);
 });
-
-gulp.task('watch', function() {
-  fileTracker(file,maxSize,location);
-});
