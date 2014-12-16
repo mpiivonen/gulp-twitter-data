@@ -7,6 +7,9 @@ will be copied over and the original file will be cleared.
 
 Quite handy tool to keep track of different logs your program may generate
 
+This plugin doesn't stream data from twitter stream. Streaming should be handled
+elsewhere and this plugin just keep eye on file size.
+
 Syntax
 -------
 Syntax
