@@ -20,8 +20,6 @@ function compareFileSize(file,maxSize,cb) {
 
     var fileUnit = size.split(" ");
     var maxUnit = maxSize.split(" ");
-    console.log(fileUnit);
-    console.log(maxUnit);
 
     if(units.indexOf(fileUnit[1]) < units.indexOf(maxUnit[1])) {
       return cb(0);
@@ -50,8 +48,7 @@ module.exports = function(file,maxSize,newLocation)
             throw err;
           }
           logNumber++;
-          console.log('Copied foo.txt to bar.txt');
-          fs.truncate(file, 0, function(){console.log('done')})
+          fs.truncate(file, 0, function(){console.log('log copied')})
         });
       }
       else {
