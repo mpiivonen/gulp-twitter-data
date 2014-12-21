@@ -10,30 +10,27 @@ Quite handy tool to keep track of different logs your program may generate
 This plugin doesn't stream data from twitter stream. Streaming should be handled
 elsewhere and this plugin just keep eye on file size.
 
-Syntax
+Example
 -------
-Syntax
+Example usage
 ```javascript
-fileTracker(file,maxSize,location);
+var gulp = require('gulp');
+var stream = require('./index.js');
+
+gulp.task('default', function () {
+  var file = "./testfile.json";
+  stream.init(file);
+});
 ```
 **file**
 
-File to keep eye on.
+File to store retrieved tweets and to keep eye on.
 
-**maxSize**
+How to configure Twitter api information and default file size.
 
-Max file size by using pretty-bytes type of value, as an example '50 B'.
-
-Available units are ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
-
-**location**
-
-Location where to files are stored. Each new file will be named as
-file + '.'+running number
-
-There's no max number of files.
-
-Example
+gulp-twitter-data requires https://github.com/mpiivonen/twitter-data npm module.
+Twitter api information and default file size can be configured at "twitter-data/user-config.json".
+To keep gulp plugin more convenient default file will be set via init function, instead of loading it from user-config.json.
 -------
 
 ```javascript
