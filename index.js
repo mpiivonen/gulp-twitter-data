@@ -5,8 +5,12 @@ var fs = require('fs'),
 
 const PLUGIN_NAME = 'gulp-twitter-data';
 
-module.exports = function(file,maxSize,newLocation)
-{
+module.exports = {
 
-
+  init: function(file){
+    twitter.initConfig();
+    var writeStream = fs.createWriteStream(file, {'flags': 'a'});
+    var client = twitter.createClient();
+    twitter.saveStream(client,writeStream);
+  }
 };
