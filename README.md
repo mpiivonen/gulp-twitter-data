@@ -26,26 +26,8 @@ gulp.task('default', function () {
 
 File to store retrieved tweets and to keep eye on.
 
-How to configure Twitter api information and default file size.
+**How to configure Twitter api information and default file size.**
 
 gulp-twitter-data requires https://github.com/mpiivonen/twitter-data npm module.
 Twitter api information and default file size can be configured at "twitter-data/user-config.json".
 To keep gulp plugin more convenient default file will be set via init function, instead of loading it from user-config.json.
--------
-
-```javascript
-var gulp = require('gulp');
-var fileTracker = require('./index.js');
-
-var file = 'testfile.log',
-maxSize = '50 B',
-location = './';
-
-gulp.task('default', function () {
-  fileTracker(file,maxSize,location);
-});
-
-gulp.task('watch', function() {
-  fileTracker(file,maxSize,location);
-});
-```
